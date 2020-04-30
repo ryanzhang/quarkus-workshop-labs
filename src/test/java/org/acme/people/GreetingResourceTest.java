@@ -12,6 +12,14 @@ import static org.hamcrest.CoreMatchers.startsWith;
 public class GreetingResourceTest {
 
     @Test
+    void testDefaultEndpoint(){
+        given()
+            .when().get("/hello")
+            .then()
+                .statusCode(200)
+                .body(is("hello Ryan!"));
+    }
+    @Test
     public void testHelloEndpoint() {
         given()
           .when().get("/hello/greeting/Ryan")
