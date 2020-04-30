@@ -6,11 +6,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-// import org.eclipse.microprofile.reactive.messaging.Channel;
+import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.jboss.resteasy.annotations.SseElementType;
 import org.reactivestreams.Publisher;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import io.smallrye.reactive.messaging.annotations.Channel;
 
 
 /**
@@ -18,6 +19,7 @@ import io.smallrye.reactive.messaging.annotations.Channel;
  */
 @Path("/names")
 public class NameResource {
+        private static final Logger log = LoggerFactory.getLogger(NameResource.class.getName());
     @Inject
     @Channel("my-data-stream")
     Publisher<String> names;
@@ -25,8 +27,9 @@ public class NameResource {
     @GET
     @Path("/stream")
     @Produces(MediaType.SERVER_SENT_EVENTS)
-    @SseElementType("text/plain")
+    @SseElementType(MediaType.TEXT_PLAIN)
     public Publisher<String> stream(){
+        log.warn(names.toString());
         return names;
     }
     

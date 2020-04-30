@@ -1,5 +1,10 @@
 = Quarkus Workshop Guide Source Code
 
+== 包含的例子
+ * 1. kafka stream人名的例子, 客户端SSE
+ * 2. panache 分页 以及查询的例子， 客户端用的jquery Datatable Pattern
+ * 3. Panache自定义Id的例子
+
 This is the source code for the https://github.com/RedHatWorkshops/quarkus-workshop[Quarkus Workshop].
 
 This workshop focuses on https://quarkus.io[Quarkus], supersonic, subatomic container-native Java. The workshop uses https://eclipse.org/che[Eclipse Che] to develop Quarkus apps and deploy them to a Kubernetes cluster (based on OpenShift), and covers several other developer topics.
