@@ -17,6 +17,13 @@ podman run -d -p 3000:3000 grafana/grafana
 https://github.com/ryanzhang/quarkus-quickstart/tree/master/metrics-quickstart#opentracing-using-jaeger
 访问 JaegerUI: http://localhost:16686
 
+=== 本机启动配置 Keycloak
+```bash
+podman run -p 18080:8080 -e KEYCLOAK_USER=admin -e KEYCLOAK_PASSWORD=admin quay.io/keycloak/keycloak:9.0.3
+```
+Keycloak console:
+http://localhost:18080/auth/admin
+
 
 This is the source code for the https://github.com/RedHatWorkshops/quarkus-workshop[Quarkus Workshop].
 
