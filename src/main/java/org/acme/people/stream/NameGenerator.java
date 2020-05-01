@@ -17,7 +17,7 @@ public class NameGenerator {
 
     @Outgoing("generated-name")
     public Flowable<String> generate() {
-        return Flowable.interval(5, TimeUnit.SECONDS).map(tick -> CuteNameGenerator.generate());
+        return Flowable.interval(1, TimeUnit.SECONDS).map(tick -> CuteNameGenerator.generate());
     }
     
 }

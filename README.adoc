@@ -5,6 +5,19 @@
  * 2. panache 分页 以及查询的例子， 客户端用的jquery Datatable Pattern
  * 3. Panache自定义Id的例子
 
+=== Run Grafana
+```bash
+podman run -d -p 3000:3000 grafana/grafana
+```
+如果下载不下来，需要先 podman pull  grafana/grafana
+
+登陆: http://localhost:3000
+
+=== 配置Jeager
+https://github.com/ryanzhang/quarkus-quickstart/tree/master/metrics-quickstart#opentracing-using-jaeger
+访问 JaegerUI: http://localhost:16686
+
+
 This is the source code for the https://github.com/RedHatWorkshops/quarkus-workshop[Quarkus Workshop].
 
 This workshop focuses on https://quarkus.io[Quarkus], supersonic, subatomic container-native Java. The workshop uses https://eclipse.org/che[Eclipse Che] to develop Quarkus apps and deploy them to a Kubernetes cluster (based on OpenShift), and covers several other developer topics.
