@@ -2,6 +2,7 @@ package org.acme.people.rest;
 
 import java.security.Principal;
 
+import javax.annotation.security.PermitAll;
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -35,6 +36,7 @@ public class JWTResource {
    */
   @GET
   @Path("/me")
+  // @PermitAll
   @RolesAllowed("user")
   @Produces(MediaType.TEXT_PLAIN)
   public String me(@Context SecurityContext ctx){
